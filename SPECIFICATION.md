@@ -26,7 +26,11 @@
 
 ## Output
 
+Application writes its output to stdout.
+
 ### EBNF
+
+Formal specification using Extended Backus-Naur Form. 
 
 ```
 output              = size, {solution}, execution time ;
