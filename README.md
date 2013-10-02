@@ -16,7 +16,7 @@ $ javac *.java
 
 ## Running
 
-Finding solution for 5x5 chessboard with initial point 1 1 and 4 random initial points.
+Finding solution for 5x5 chessboard using initial point 1 1 and 4 other random initial points.
 
 ```bash
 $ java Main 5
