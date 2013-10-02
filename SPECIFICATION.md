@@ -7,6 +7,8 @@
 
 ## Command line
 
+Application reads command line arguments from the operating systems.
+
 - when 1 argument is provided
   - must be integer 
   - must be from 5 to 20 (closed interval; including 5 and 20)
@@ -26,7 +28,7 @@
 
 ## Output
 
-Application writes its output to stdout.
+Application writes its output to the stdout file descriptor provided by the operating system.
 
 ### EBNF
 
