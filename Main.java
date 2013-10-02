@@ -2,31 +2,34 @@ import java.util.*;
 
 public class Main
 {
-	// najde (alebo nenajde) riesenie
+	/**
+	 * Finds the solution for the initial state.
+	 */
 	private static State findSolution(State initial)
 	{
-		Deque<State> states = new ArrayDeque<State>(); // zasobnik
+		Deque<State> states = new ArrayDeque<State>(); // stack
 		int steps = 0;
 		
-		states.addFirst(initial); // vlozime pociatocny stav
+		// push the initial state
+		states.addFirst(initial);
+
 		for (;;)
 		{
-			/*
+			// iteration limit
 			steps++;
 			if (steps > 100000000)
-				return null; // prekroceny limit iteracii
-			*/
+				return null; // limit exceeded, no solution found
 				
 			State state;
 			if (states.size() > 0) 
-				state = states.removeFirst(); // vyberieme stav zo zasobnika
+				state = states.removeFirst(); // pop new current state from stack
 			else
-				return null; // prázdny zásobník, riesenie neexistuje
+				return null; // empty stack, no solution found
 				
-			if (state.isFinal()) // konečný stav
-				return state; // vratime riesenie
+			if (state.isFinal()) // final state
+				return state; // we have found the solution
 			else
-				state.pushActions(states); // pridáme potomkov aktualneho stavu
+				state.pushActions(states); // push ancestors of the current state
 		}
 	}
 	
@@ -37,9 +40,13 @@ public class Main
 		
 		Integer customX = null, customY = null;
 		
+		// measure computation time
 		long start = System.currentTimeMillis();
+
+		// size of the chessboard
 		int size = Integer.parseInt(args[0]);
 		
+		// custom initial point
 		if (args.length > 1)
 		{
 			customX = Integer.parseInt(args[1]);
@@ -50,7 +57,7 @@ public class Main
 
 		if (customX == null || customY == null)
 		{
-			// pozicia 1 1
+			// try initial position 1 1 and 4 random positions
 			System.out.println("Solving field " + 1 + " " + 1);
 			System.out.println(findSolution(new State(size, 0, 0, 1, null)));
 			for (int i = 0; i < 4; i++)
@@ -65,7 +72,7 @@ public class Main
 		}	
 		else
 		{
-			// vlastna pozicia
+			// try custom initial position
 			System.out.println("Solving field " + customX + " " + customY);
 			System.out.println(findSolution(new State(size, customX, customY, 1, null)));
 		}

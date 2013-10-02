@@ -6,7 +6,6 @@ public class State
 	private int size, x, y, number;
 	private int[] board;
 
-	// vutvorenie noveho stavu
 	public State(int size, int x, int y, int number, int[] board)
 	{
 		this.size = size;
@@ -14,27 +13,28 @@ public class State
 		this.y = y;
 		this.number = number;
 		
-		// pri vytvarani prveho stavu si sachovnicu vytvori sam
-		// ostatne sachovnice vzniknu kopirovanim v pushNewPositionIfValid()
+		// the first state creates a new chessboard
+		// ancestors copy the chessboard 
 		if (board != null)
 			this.board = board;
 		else
 			this.board = new int[size * size]; 
 			
-		// prida novu poziciu
+		// add new position
 		this.board[x * size + y] = number;
 	}
 	
-	// je konecny?
 	public boolean isFinal()
 	{
 		return number == size * size;
 	}
 	
-	// prida stavy (potomkov) na zasobnik
+	/**
+	 * Add ancestors to the stack
+	 */
 	public void pushActions(Deque<State> states) 
 	{
-		// zavola pushNewPositionIfValid() pre vsetky smery kona
+		// for all possible knight's moves
 		pushNewPositionIfValid(states, this.x - 2, this.y + 1);
 		pushNewPositionIfValid(states, this.x - 2, this.y - 1);
 		pushNewPositionIfValid(states, this.x + 2, this.y - 1);
@@ -45,8 +45,9 @@ public class State
 		pushNewPositionIfValid(states, this.x - 1, this.y - 2);
 	}
 	
-	
-	// vypis konecneho stavu
+	/**
+	 * Used to print the final state.
+	 */
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder(127);
@@ -61,7 +62,9 @@ public class State
 		return sb.toString();
 	}
 	
-	// prida novy stav na zasobnik, ak to ma zmysel
+	/**
+	 * Adds a new state to the stack.
+	 */
 	private void pushNewPositionIfValid(Deque<State> states, int x, int y)
 	{
 		if (x >= 0 && x < size && y >= 0 && y < size) // je na sachovnici?
