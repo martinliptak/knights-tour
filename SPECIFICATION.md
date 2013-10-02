@@ -4,6 +4,9 @@
 
 - Chessboard size. Dimension N of square chessboard NxN where the knight moves.
 - Initial point. The point where the knight starts his tour.
+- Stack. Last-in first-out data structure.
+- State. Contains current position of the knight, visited fields of the chessboard and path of the knight.
+- State ancestors. New states created from the original state using all possible knight moves.
 
 ## Command line
 
@@ -39,9 +42,10 @@ output              = size, {solution}, execution time ;
 size                = "Size ", <number>, "x", <number>, <new line> ;
 solution            = initial field, knights tour ;
 initial field       = "Solving field ", <number>, " ", <number>, <new line> ;
-knights tour        = ({knights tour line} | "null"), <new line> ;
+knights tour        = ({knights tour line} | no solution found), <new line> ;
 knights tour line   = {knights tour number}, <new line> ;
 knights tour number = <number padded with spaces to 2 characters> ;
+no solution found   = "null" ;
 execution time      = "Execution time ", <number>, "ms", <new line> ;
 ```
 
@@ -74,4 +78,20 @@ Execution time 483ms
 
 ## Finding solution
 
-TODO
+- application writes chessboard size
+- application writes solutions
+  - for every initial point (see command line arguments)
+    - application writes initial point coordinates
+    - application searches for the solution
+      - first state at the initial point is pushed to the stack
+      - internal loop
+        - at last 100,000,000 iterations are allowed 
+        - if stack is empty, the solution does not exist
+        - a state is popped from the stack
+        - if the popped state is final, we have found the solution
+        - otherwise all the ancestors of the popped state are pushed to the stack
+    - if solutions exists
+      - application writes path of the knight
+    - if solution does not exist
+      - application writes "null"
+- application writes execution time
