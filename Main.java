@@ -32,9 +32,82 @@ public class Main
 				state.pushActions(states); // push ancestors of the current state
 		}
 	}
+    
+    private static boolean argumentCheck(String [] args)
+    {
+        int sizeOfTable=0;
+        
+        if (args.length != 1 && args.length != 3)   // testing the number of arguments
+        {
+            System.out.println("Wrong number of arguments!\nPlease folow the instuctions and put 1 or 3 arguments!");
+            return false;
+        }
+        
+        
+        if ( !isNumeric(args[0]) )      // testing the first argument
+        {
+            System.out.println("The given argument is not numeric!\nPlease folow the instuctions and use an integer value from 5 to 7!");
+            return false;
+        }
+        else        // saving the size of the chess table for testing the next arguments
+        {
+            sizeOfTable = Integer.parseInt(args[0]);
+            if (sizeOfTable < 5 || sizeOfTable > 7)
+            {
+                System.out.println("The given argument is not valid!\nPlease folow the instuctions and use a number from 5 to 7!");
+                return false;
+            }
+        }
+        
+        if (args.length > 1)
+        {
+            if ( !isNumeric(args[1]) )  //testing the second argument
+            {
+                System.out.println("The second argument is not numeric!\nPlease folow the instuctions and use an integer value!");
+                return false;
+            }
+            else
+            {
+                int x = Integer.parseInt(args[1]);
+                if ( x < 1 || x > sizeOfTable)
+                {
+                    System.out.println("The second argument is not valid!\nPlease folow the instuctions and use a number according to the size of the table!");
+                    return false;
+                }
+            }
+            
+            if ( !isNumeric(args[2]) )  //testing the third argument
+            {
+                System.out.println("The third argument is not numeric!\nPlease folow the instuctions and use an integer value!");
+                return false;
+            }
+            else
+            {
+                int y = Integer.parseInt(args[2]);
+                if ( y < 1 || y > sizeOfTable)
+                {
+                    System.out.println("The third argument is not valid!\nPlease folow the instuctions and use a number according to the size of the table!");
+                    return false;
+                }
+            }
+            
+        }
+        
+        return true;
+    }
+    
+    public static boolean isNumeric(String s)
+    {
+        return s.matches("[-+]?\\d*\\.?\\d+");
+    }
 	
 	public static void main(String [] args)
 	{
+        if( !argumentCheck(args) )
+        {
+            return;
+        }
+        
 		State found;
 		Random randomGenerator = new Random();
 		
