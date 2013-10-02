@@ -27,3 +27,12 @@ Finding solution for 7x7 checcboard and custom initial point 2 3.
 ```bash
 $ java Main 6 2 3
 ```
+
+## Specification
+
+See SPECIFICATION.md
+
+## License
+
+See LICENSE.txt
+
