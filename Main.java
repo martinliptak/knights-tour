@@ -58,7 +58,7 @@ public class Main
 		if (customX == null || customY == null)
 		{
 			// try initial position 1 1 and 4 random positions
-			System.out.println("Solving field " + 1 + " " + 1);
+			System.out.println("Solving field from start-position " + 1 + " " + 1);
 			System.out.println(findSolution(new State(size, 0, 0, 1, null)));
 			for (int i = 0; i < 4; i++)
 			{
@@ -66,18 +66,18 @@ public class Main
 				int x = randomGenerator.nextInt(size);
 				int y = randomGenerator.nextInt(size);
 			
-				System.out.println("Solving field " + (x + 1) + " " + (y + 1));
+				System.out.println("Solving field from start-position " + (x + 1) + " " + (y + 1));
 				System.out.println(findSolution(new State(size, x, y, 1, null)));
 			}
 		}	
 		else
 		{
 			// try custom initial position
-			System.out.println("Solving field " + customX + " " + customY);
+			System.out.println("Solving field from start-position " + customX + " " + customY);
 			System.out.println(findSolution(new State(size, customX, customY, 1, null)));
 		}
 			
 		long end = System.currentTimeMillis();
-		System.out.println("Execution time " + (end - start) + "ms");
+		System.out.println("Execution time: " + (end - start) + "ms");
 	}
 }
