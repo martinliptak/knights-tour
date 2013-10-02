@@ -29,14 +29,14 @@
 ### EBNF
 
 ```
-output = size, {solution}, execution time ;
-size = "Size ", <number>, "x", <number>, <new line> ;
-solution = initial field, knights tour ;
-initial field = "Solving field ", <number>, " ", <number>, <new line> ;
-knights tour = {knights tour line}
-knights tour line = {knights tour number}, <new line>
+output              = size, {solution}, execution time ;
+size                = "Size ", <number>, "x", <number>, <new line> ;
+solution            = initial field, knights tour ;
+initial field       = "Solving field ", <number>, " ", <number>, <new line> ;
+knights tour        = {knights tour line}
+knights tour line   = {knights tour number}, <new line>
 knights tour number = <number padded with spaces to 2 characters>
-execution time = "Execution time ", <number>, "ms", <new line> ;
+execution time      = "Execution time ", <number>, "ms", <new line> ;
 ```
 
 ### Example
