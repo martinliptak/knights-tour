@@ -28,6 +28,7 @@
 
 ### EBNF
 
+```
 output = size, {solution}, execution time ;
 size = "Size ", <number>, "x", <number>, <new line> ;
 solution = initial field, knights tour ;
@@ -36,9 +37,11 @@ knights tour = {knights tour line}
 knights tour line = {knights tour number}, <new line>
 knights tour number = <number padded with spaces to 2 characters>
 execution time = "Execution time ", <number>, "ms", <new line> ;
+```
 
 ### Example
 
+```
 Size 5x5
 Solving field 1 1
  3 12  7 16 25 
@@ -61,6 +64,7 @@ null
 Solving field 2 5
 null
 Execution time 483ms
+```
 
 ## Finding solution
 

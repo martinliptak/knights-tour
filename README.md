@@ -2,7 +2,7 @@
 
 This is an example appication for Verification and Validation course at UPM.
 
-The appication finds solutions for [Knight's tour](http://en.wikipedia.org/wiki/Knight's_tour) problems.
+The application finds solutions for [Knight's tour](http://en.wikipedia.org/wiki/Knight's_tour) problems.
 
 ## Building
 
