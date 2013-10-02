@@ -11,7 +11,7 @@ Application reads command line arguments from the operating systems.
 
 - when 1 argument is provided
   - must be integer 
-  - must be from 5 to 20 (closed interval; including 5 and 20)
+  - must be from 5 to 7 (closed interval; including 5 and 7)
   - interpreted as chessboard size
   - finds solutions for 5 default initial points
     - x = 1 and y = 1
@@ -19,7 +19,7 @@ Application reads command line arguments from the operating systems.
 - when 3 arguments are provided
   - all must be integers
   - argument 1
-    - must be from 5 to 20 (closed interval; including 5 and 20)
+    - must be from 5 to 7 (closed interval; including 5 and 7)
     - interpreted as chessboard size
   - arguments 2 and 3
     - must be from 1 to the chessboard size (closed interval; including 1 and chessboard size)
