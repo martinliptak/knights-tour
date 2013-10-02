@@ -2,9 +2,7 @@
 
 This is an example appication for Verification and Validation course at UPM.
 
-The appication finds solutions for [Knight's tour][1] problems.
-
-[1]: http://en.wikipedia.org/wiki/Knight's_tour
+The appication finds solutions for [Knight's tour](http://en.wikipedia.org/wiki/Knight's_tour) problems.
 
 ## Building
 
@@ -30,9 +28,9 @@ $ java Main 6 2 3
 
 ## Specification
 
-See SPECIFICATION.md
+See [SPECIFICATION.md](SPECIFICATION.md)
 
 ## License
 
-See LICENSE.txt
+See [LICENSE.txt](LICENSE.txt)
 
