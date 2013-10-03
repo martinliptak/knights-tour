@@ -30,6 +30,10 @@ $ java Main 7 2 3
 
 See [SPECIFICATION.md](SPECIFICATION.md)
 
+## Testing strategies
+
+See [Testing strategies.md](Testing strategies.md)
+
 ## License
 
 See [LICENSE.txt](LICENSE.txt)

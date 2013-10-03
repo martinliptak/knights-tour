@@ -1,5 +1,6 @@
+# Knight's tour - Testing strategies
 
-I. Strategies to test if the input parameters are ok:
+## I. Strategies to test if the input parameters are ok:
 1. Cases in which a knight cannot move in the chessboard(the chessboard size is too small):
 	a. $ java Main 1
 	b. $ java Main 2
@@ -16,8 +17,8 @@ I. Strategies to test if the input parameters are ok:
 	b. $ java Main -1 
 
 
-II. Startegies to test the programme when the input parameters are ok:
-1. The program was tested with the first input parameter having values between 5-9,
+## II. Startegies to test the programme when the input parameters are ok:
+1. The program was tested with the first input parameter having values between 5-7,
 otherwise the waiting time is too long.
 	a. $ java Main 5
 	b. $ java Main 6
