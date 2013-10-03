@@ -39,57 +39,73 @@ public class Main
         
         if (args.length != 1 && args.length != 3)   // testing the number of arguments
         {
-            System.out.println("Wrong number of arguments!\nPlease folow the instuctions and put 1 or 3 arguments!");
+            System.out.println("Wrong number of arguments!\nPlease folow the instuctions and put 1 or 3 arguments!\n");
             return false;
         }
         
         
         if ( !isNumeric(args[0]) )      // testing the first argument
         {
-            System.out.println("The given argument is not numeric!\nPlease folow the instuctions and use an integer value from 5 to 7!");
+            System.out.println("The first argument is not numeric!\nPlease folow the instuctions and use an integer value from 5 to 7!\n");
             return false;
         }
-        else        // saving the size of the chess table for testing the next arguments
+        
+        if( !isInteger(args[0]))
         {
-            sizeOfTable = Integer.parseInt(args[0]);
-            if (sizeOfTable < 5 || sizeOfTable > 7)
-            {
-                System.out.println("The given argument is not valid!\nPlease folow the instuctions and use a number from 5 to 7!");
-                return false;
-            }
+            System.out.println("The first argument is not an integer!\nPlease folow the instuctions and use an integer value from 5 to 7!\n");
+            return false;
         }
+        
+        sizeOfTable = Integer.parseInt(args[0]);
+        if (sizeOfTable < 5 || sizeOfTable > 7)     // testing the value of the given integer (argument 1)
+        {
+            System.out.println("The first argument is not valid!\nPlease folow the instuctions and use a number from 5 to 7!\n");
+            return false;
+        }
+        
         
         if (args.length > 1)
         {
             if ( !isNumeric(args[1]) )  //testing the second argument
             {
-                System.out.println("The second argument is not numeric!\nPlease folow the instuctions and use an integer value!");
+                System.out.println("The second argument is not numeric!\nPlease folow the instuctions and use an integer value!\n");
                 return false;
             }
-            else
+            
+            if ( !isInteger(args[1]) )  
             {
-                int x = Integer.parseInt(args[1]);
-                if ( x < 1 || x > sizeOfTable)
-                {
-                    System.out.println("The second argument is not valid!\nPlease folow the instuctions and use a number according to the size of the table!");
-                    return false;
-                }
+                System.out.println("The second argument is not an integer!\nPlease folow the instuctions and use an integer value!\n");
+                return false;
             }
+            
+            
+            int x = Integer.parseInt(args[1]);
+            if ( x < 1 || x > sizeOfTable)
+            {
+                System.out.println("The second argument is not valid!\nPlease folow the instuctions and use a number in the interval: from 1 to \"the chessboard size\"!\nHelp: Chessboard size is given by the first argument.\n");
+                return false;
+            }
+            
             
             if ( !isNumeric(args[2]) )  //testing the third argument
             {
-                System.out.println("The third argument is not numeric!\nPlease folow the instuctions and use an integer value!");
+                System.out.println("The third argument is not numeric!\nPlease folow the instuctions and use an integer value!\n");
                 return false;
             }
-            else
+            
+            if ( !isInteger(args[2]) )
             {
-                int y = Integer.parseInt(args[2]);
-                if ( y < 1 || y > sizeOfTable)
-                {
-                    System.out.println("The third argument is not valid!\nPlease folow the instuctions and use a number according to the size of the table!");
-                    return false;
-                }
+                System.out.println("The third argument is not an integer!\nPlease folow the instuctions and use an integer value!\n");
+                return false;
             }
+            
+            int y = Integer.parseInt(args[2]);
+            if ( y < 1 || y > sizeOfTable)
+            {
+                System.out.println("The third argument is not valid!\nPlease folow the instuctions and use a number in the interval: from 1 to \"the chessboard size\"!\nHelp: Chessboard size is given by the first argument.\n");
+                return false;
+            }
+            
             
         }
         
@@ -99,6 +115,19 @@ public class Main
     public static boolean isNumeric(String s)
     {
         return s.matches("[-+]?\\d*\\.?\\d+");
+    }
+    
+    public static boolean isInteger(String s) {
+        try
+        {
+            Integer.parseInt(s);
+        }
+        catch(NumberFormatException e)
+        {
+            return false;
+        }
+        
+        return true;
     }
 	
 	public static void main(String [] args)
@@ -151,6 +180,6 @@ public class Main
 		}
 			
 		long end = System.currentTimeMillis();
-		System.out.println("Execution time: " + (end - start) + "ms");
+		System.out.println("Execution time: " + (end - start) + "ms\n");
 	}
 }
