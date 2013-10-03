@@ -77,5 +77,6 @@ $ java Main 6 3 3
 ```bash
 $ java Main 6 2 4
 ```
+
 Faults found: sometimes there isn't any solution for some random generated points
 (this isn't quite a fault, it is normal that for some points there isn't solution. The output of the this kind of result is "null")
