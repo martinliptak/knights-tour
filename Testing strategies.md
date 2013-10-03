@@ -3,9 +3,9 @@
 ## I. Strategies to test if the input parameters are ok:
 1. Cases in which a knight cannot move in the chessboard(the chessboard size is too small):
 
-	a. ```bash
-    $ java Main 1
-    ```
+```bash
+$ java Main 1
+```
 
 	b. $ java Main 2
 
