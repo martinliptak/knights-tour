@@ -6,9 +6,9 @@
 ```bash
 $ java Main 1
 ```
-
-	b. $ java Main 2
-
+```bash
+$ java Main 2
+```
 	c. $ java Main 3
 
 	d. $ java Main 4
