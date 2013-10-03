@@ -122,8 +122,8 @@ public class Main
 		// custom initial point
 		if (args.length > 1)
 		{
-			customX = Integer.parseInt(args[1]);
-			customY = Integer.parseInt(args[2]);
+			customX = Integer.parseInt(args[1]) - 1;
+			customY = Integer.parseInt(args[2]) - 1;
 		}
 		
 		System.out.println("Size " + size + "x" + size);
@@ -146,7 +146,7 @@ public class Main
 		else
 		{
 			// try custom initial position
-			System.out.println("Solving field from start-position " + customX + " " + customY);
+			System.out.println("Solving field from start-position " + (customX + 1) + " " + (customY + 1) );
 			System.out.println(findSolution(new State(size, customX, customY, 1, null)));
 		}
 			
