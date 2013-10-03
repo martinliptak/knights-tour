@@ -9,17 +9,19 @@ $ java Main 1
 ```bash
 $ java Main 2
 ```
-	c. $ java Main 3
+```bash
+$ java Main 3
 
-	d. $ java Main 4
+$ java Main 4
 
 2. Cases in which the initial point given at the input exceeds the limits of the chessboard:
 
-	a. $ java Main 5 6 6
+```bash
+$ java Main 5 6 6
 
-	b. $ java Main 6 -1 0
+$ java Main 6 -1 0
 
-	c. $ java Main 5 7 2
+$ java Main 5 7 2
 
 3. Cases in which the chessboard size is negative or equals 0:
 
