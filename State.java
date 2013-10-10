@@ -67,9 +67,9 @@ public class State
 	 */
 	private void pushNewPositionIfValid(Deque<State> states, int x, int y)
 	{
-		if (x >= 0 && x < size && y >= 0 && y < size) // je na sachovnici?
-			if (board[x * size + y] == 0) // neboli sme tam?
-				states.addFirst(new State(size, x, y, number + 1, board.clone())); // pridame stav
+		if (x >= 0 && x < size && y >= 0 && y < size) // is the position on the board?
+			if (board[x * size + y] == 0) // did the knight visit this position already?
+				states.addFirst(new State(size, x, y, number + 1, board.clone())); // adding state
 	}
 }
 

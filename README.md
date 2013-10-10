@@ -20,15 +20,19 @@ Finding solution for 5x5 chessboard using initial point 1 1 and 4 other random i
 $ java Main 5
 ```
 
-Finding solution for 7x7 checcboard and custom initial point 2 3.
+Finding solution for 7x7 chessboard and custom initial point 2 3.
 
 ```bash
-$ java Main 6 2 3
+$ java Main 7 2 3
 ```
 
 ## Specification
 
 See [SPECIFICATION.md](SPECIFICATION.md)
+
+## Testing strategies
+
+See [Testing strategies.md](Testing strategies.md)
 
 ## License
 
