@@ -17,7 +17,7 @@ public class Main
 		{
 			// iteration limit
 			steps++;
-			if (steps > 100000000)
+			if (steps > 1000) // FAULT
 				return null; // limit exceeded, no solution found
 				
 			State state;
