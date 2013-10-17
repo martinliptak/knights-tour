@@ -44,8 +44,8 @@ public class State
 		pushNewPositionIfValid(states, this.x - 1, this.y + 2);
 		pushNewPositionIfValid(states, this.x - 1, this.y - 2);
         
-        // *** ERROR-5 the last 4 cases shouldn't be here, they are not possible knight moves => with the additional moves there is bigger posibility for getting a solution, but the most of the solutions won't be correct
-        pushNewPositionIfValid(states, this.x - 2, this.y + 2);
+    // *** ERROR-5 the last 4 cases shouldn't be here, they are not possible knight moves => with the additional moves there is bigger posibility for getting a solution, but the most of the solutions won't be correct
+    pushNewPositionIfValid(states, this.x - 2, this.y + 2);
 		pushNewPositionIfValid(states, this.x - 2, this.y - 2);
 		pushNewPositionIfValid(states, this.x + 1, this.y - 1);
 		pushNewPositionIfValid(states, this.x + 1, this.y + 1);

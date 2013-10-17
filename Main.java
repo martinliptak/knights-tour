@@ -16,9 +16,12 @@ public class Main
 		for (;;)
 		{
 			// iteration limit
-			steps++;
+            // *** ERROR-8 Should limit the number of iterations, otherwise can take very long time to run
+			/*
+            steps++;
 			if (steps > 100000000)
 				return null; // limit exceeded, no solution found
+            */
 				
 			State state;
 			if (states.size() > 0) 

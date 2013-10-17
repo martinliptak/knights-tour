@@ -49,7 +49,7 @@ $ java Main 6 -1 0
 $ java Main 5 7 2
 ```
 
-## II. Startegies to test the programme when the input parameters are valid:
+## II. Startegies to test the program when the input parameters are valid:
 1. The program was tested with the first input parameter having values between 5-7.
 	
 ```bash
